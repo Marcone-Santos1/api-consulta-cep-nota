@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de CEP</title>
+</head>
+<body>
+<h1>Consulta de CEP</h1>
+<form action="/cep" method="post">
+  <label for="cep">CEP:</label>
+  <input type="text" id="cep" name="cep" required><br>
+  <button type="submit">Consultar</button>
+</form>
+<div th:if="${endereco != null}">
+  <h2>Informações do CEP:</h2>
+  <p>CEP: <span th:text="${cep}"></span></p>
+  <p>Cidade: <span th:text="${bairro}"></span></p>
+  <p>Logradouro: <span th:text="${logradouro}"></span></p>
+  <p>Cidade: <span th:text="${cidade}"></span></p>
+  <p>Cidade: <span th:text="${uf}"></span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Média</title>
+</head>
+<body>
+<h1>Calculadora de Média</h1>
+<form action="/notas" method="post">
+    <label for="p1">Nota P1:</label>
+    <input type="text" id="p1" name="p1" required><br>
+    <label for="p2">Nota P2:</label>
+    <input type="text" id="p2" name="p2" required><br>
+    <label for="projeto">Nota do Projeto:</label>
+    <input type="text" id="projeto" name="projeto" required><br>
+    <button type="submit">Calcular</button>
+</form>
+<div th:if="${media != null}">
+    <p>No projeto: <span th:text="${projeto}"></span></p>
+    <p>A média do aluno é: <span th:text="${media}"></span></p>
+</div>
+</body>
+</html>
